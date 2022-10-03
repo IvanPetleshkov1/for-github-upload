@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Логин форма</title>
+</head>
+<body>
+        <label for="">Email</label><br>
+        <input type="text" id="email">
+        <span class="error" id="mail-error"></span><br>
+        <label for="">Парола</label><br>
+        <input type="password" id="password">
+        <span class="error" id="passerror"></span>
+        <button onclick="login()">Вход</button>
+    <script>
+        function login(){
+            let mail=document.querySelector('#email');
+            let mailLength=mail.value.length;
+            let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            let pass=document.querySelector('#password');
+            let passLength=pass.value.length;
+            if(passLength<=0 || mailLength<=0){
+                alert("Моля въведете данни в полетата! ");
+            }
+            else if(  mailLength>=20 || !(mail.value.match(mailformat))){
+                document.querySelector('#mail-error').innerHTML = 'Въведете валиден имейл!';
+                    return;
+            }
+            else if (passLength < 6) {
+                    document.querySelector('#passerror').innerHTML = 'Въведете валидна парола!';
+                    return;
+                }
+            else {
+                alert('Успешно влизане!');
+            }     
+        }
+    </script>
+
+</body>
+</html>

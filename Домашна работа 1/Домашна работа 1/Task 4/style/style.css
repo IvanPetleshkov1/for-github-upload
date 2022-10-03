@@ -1,0 +1,34 @@
+@media(min-width:1024px) {
+    .box{
+        background-color: lightblue;
+        width: 30%;
+        min-height: 200px;
+        display: inline-block;
+    }
+    .container{
+        text-align: center;
+        font-size: 30px;
+    }
+    
+  }
+  @media (min-width:768px )and (max-width:1024px) {
+    .boxm{
+        background-color: yellow;
+        width: 100%;
+        min-height: 200px;
+    }
+    .box50{
+        display: flex;
+        display: inline-block;
+        flex-direction: row;
+        background-color: rgb(8, 122, 29);
+        width: 48%;
+        min-height: 200px;
+    }
+  }
+  @media (max-width:767px){
+      .box100{
+          width: 100%;
+          background-color: lightblue;
+      }
+  }

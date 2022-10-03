@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Ex1 Task 4</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+            }
+
+            .box {
+                height: 200px;
+                width: 200px;
+                background: silver;
+            }
+
+            .container {
+                display: flex;
+                justify-content: space-evenly;
+            }
+
+            @media (max-width: 1024px) {
+                .container { 
+                    flex-direction: column;
+                    padding: 15px;
+                }
+
+                .box {
+                    width: 100%;
+                    margin-bottom: 15px;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+    </body>
+</html>

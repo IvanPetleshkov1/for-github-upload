@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .form-control {
+                width: 150px;
+            }
+
+            table, td, tr {
+                border: 1px solid silver;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="table-container">
+
+        </div>
+        <script>
+
+            function createTableRow(id) {
+                let html = '';
+                html += '<tr>';
+                html += '<td>';
+                html += `<input oninput="inputGrade('${id}', this)" class="form-control" type="number" min="2"  max="6" />`;
+                html += '</td>';
+                html += '<td style="width: 100px;">';
+                html += `<span id="${id}"></span>`;
+                html += '</td>';
+                html += '</tr>';
+
+                return html;
+            }
+
+            function createTable() {
+                let html = '<table>';
+                for (let i = 0; i < 15; i++) {
+                    html += createTableRow("grade" + i);
+                    /*html += '<tr>';
+                    html += '<td>';
+                    html += `<input oninput="inputGrade('grade${i}', this)" class="form-control" type="number" min="2"  max="6" />`; 
+                    html += '</td>';
+                    html += '<td style="width: 100px;">';
+                    html += `<span id="grade${i}"></span>`; 
+                    html += '</td>'; 
+                    html += '</tr>';*/
+                }
+
+                html += '</table>';
+
+                document.querySelector('#table-container').innerHTML = html;
+            }
+
+            function inputGrade(id, inputElement) {
+                let el = document.getElementById(id);
+                let grade = inputElement.value;
+                if (grade == 2) {
+                    el.innerHTML = 'Слаб';
+                }
+                else if (grade == 3) {
+                    el.innerHTML = 'Среден';
+                }
+                else if (grade == 4) {
+                    el.innerHTML = 'Добър';
+                }
+                else if (grade == 5) {
+                    el.innerHTML = 'Мн. Добър';
+                }
+                else if (grade == 6) {
+                    el.innerHTML = 'Отличен';
+                }
+                else if (grade == '') {
+                    el.innerHTML = '';
+                }
+                else {
+                    el.innerHTML = 'Грешна оценка';
+                }
+            }
+
+            createTable();
+        </script>
+    </body>
+</html>

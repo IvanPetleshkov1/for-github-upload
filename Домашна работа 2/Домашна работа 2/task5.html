@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 5</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                display: grid;
+                grid-template-columns: repeat(11, 1fr);
+               
+            }
+
+            .img {
+                grid-row: 1/8;
+                grid-column: 6/10;
+            }
+
+            .title {
+                grid-row: 3/4;
+                grid-column: 3/5;
+            }
+
+            .orange {
+                grid-row: 4/12;
+                grid-column: 3/4;
+                background: orange;
+            }
+
+            .par {
+                grid-row: 8/13;
+                grid-column: 6/10;
+                column-gap: 3rem;
+            }
+
+            .par p {
+                text-align:center;
+                font-family: 'Montserrat', sans-serif;
+                color: black;
+            } 
+
+            .box h1 {
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            .img img{
+                box-sizing: border-box;
+                width: 100%;
+            }
+
+            .title h1 {
+                font-size: 1.3rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box img">
+                    <img src="logo.jpg" alt="">
+            </div>
+            <div class="box title">
+                <h1>This is grid box model!</h1>
+            </div>
+            <div class="box orange"></div>
+            <div class="box par">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing
+                    elit. Tenetur eligendi tempora omnis? Dignissimos,
+                    doloribus itaque? Ipsam minima maxime consequatur
+                    debitis similique ullam quae voluptatum aspernatur
+                    expedita consectetur. Exercitationem a iure, perferendis
+                    pariatur sunt, doloribus laboriosam odio eveniet et
+                    praesentium hic.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

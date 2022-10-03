@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Web App</title>
+</head>
+<body>
+    <div class="container">
+        <!--NAV-START-->
+        <div class="logo">
+            <a href="#">CARS</a>
+        </div>
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Products</a>
+                </li>
+                <li>
+                    <a href="#">Blog</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <a href="#">Login</a>
+                </li>
+                <li>
+                    <a href="#">Sign up</a>
+                </li>
+            </ul>
+        </div>
+
+        <!--NAV-END-->
+
+        <!--PRODUCT SECTION START-->
+        <div class="wrapper">
+            <div id="buttons">
+                <button class="button-value" onclick="filterProduct('all')">Всички</button>
+                <button class="button-value" onclick="filterProduct('Джипове')">
+                    Джипове
+                </button>
+                <button class="button-value" onclick="filterProduct('Леки')">
+                    Леки коли
+                </button>
+                <button class="button-value" onclick="filterProduct('Товарни')">
+                    Товарни автомобили
+                </button>
+            </div>
+            <div id="products"></div>
+        </div>
+    </div>
+    <!--PRODUCT SECTION END-->
+    <!--FOOTER START-->
+    <div class="footer">
+        <div class="secondnav">
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Products</a>
+                </li>
+                <li>
+                    <a href="#">Blog</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <a href="#">Login</a>
+                </li>
+                <li>
+                    <a href="#">Sign up</a>
+                </li>
+            </ul>
+        </div>
+        <div class="contacts">
+            <ul>
+                <li>
+                    <span>Email: Cars@gmail.com</span>
+                </li>
+                <li>
+                    <span>Phone: 0123456</span>
+                </li>
+                <li>
+                    <span>Adress: Durvenica, Sofia</span>
+                </li>
+                <li>
+                    <span><i class="fa-brands fa-facebook-f"></i></i>: Cars</span>
+                </li>
+                <li>
+                    <span><i class="fa-brands fab fa-instagram"></i></i>: Cars</span>
+                </li>
+            </ul>
+        </div>
+        <div class="map">
+            <div class="mapouter">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11735.731204382417!2d23.3637727!3d42.6627794!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8686f6afa4d1%3A0x22df2ac3ba8babdb!2z0LYu0LouINCc0LvQsNC00L7RgdGCIDEsINCh0L7RhNC40Y8!5e0!3m2!1sbg!2sbg!4v1663921201785!5m2!1sbg!2sbg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+    </div>
+    <!--FOOTER END-->
+    </div>
+    <script>
+           let products = {
+            data: [
+                {
+                    productName: "Mercedes GLE", category: "Джипове", price: "300 000", image: "gle.webp",
+                },
+                {
+                    productName: "Mercedes G-Class", category: "Джипове", price: "500 000", image: "gclass.jpg",
+                },
+                {
+                    productName: "Mercedes C-Class", category: "Леки", price: "150 000", image: "cclass.jpg",
+                },
+                {
+                    productName: "Mercedes S-Class", category: "Леки", price: "350 000", image: "sclass.jpg",
+                },
+                {
+                    productName: "Mercedes Truck 1", category: "Товарни", price: "900 000", image: "kamion1.jpg",
+                },
+                {
+                    productName: "Mercedes Truck 2", category: "Товарни", price: "750 000", image: "kamion2.jpg",
+                },
+               
+            ],
+        };
+        for (let i of products.data) {
+            let card = document.createElement("div");
+            card.classList.add("card", i.category, "hide");
+
+            let imgContainer = document.createElement("div");
+            imgContainer.classList.add("image-container");
+
+            let image = document.createElement("img");
+            image.setAttribute("src", i.image);
+
+            imgContainer.appendChild(image);
+            card.appendChild(imgContainer);
+
+            let container = document.createElement("div");
+            container.classList.add("container");
+
+            let name = document.createElement("h4");
+            name.classList.add("product-name");
+
+            name.innerText = i.productName.toUpperCase();
+            container.appendChild(name);
+
+            let price = document.createElement("h5");
+            price.innerText = "$" + i.price;
+            container.appendChild(price);
+            card.appendChild(container);
+            document.getElementById("products").appendChild(card);
+        }
+
+        function filterProduct(value) {
+            let buttons = document.querySelectorAll(".button-value");
+            buttons.forEach((button) => {
+                if (value.toUpperCase() == button.innerText.toUpperCase()) {
+                    button.classList.add("active");
+                } else {
+                    button.classList.remove("active");
+                }
+            });
+
+            let elements = document.querySelectorAll(".card");
+            elements.forEach((element) => {
+                if (value == "all") {
+                    element.classList.remove("hide");
+                } else {
+                    if (element.classList.contains(value)) {
+                        element.classList.remove("hide");
+                    } else {
+                        element.classList.add("hide");
+                    }
+                }
+            });
+        }
+        
+        window.onload = () => {
+            filterProduct("all");
+        };
+
+    </script>
+</body>
+
+</html>

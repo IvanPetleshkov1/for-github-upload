@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сумиране на числа</title>
+</head>
+<body>
+    <label for="">Въведи число:</label>
+    <input  type="number" id="num">
+    <button onclick="sumNum()">Калкулирай</button>
+    <script>
+        function sumNum() {
+            let a=document.querySelector("#num").value;
+            let sum=0;
+            for(let i=1; i<=a;i++) {
+                sum=sum+i;
+            }
+            alert(sum);
+        }
+    </script>
+</body>
+</html>

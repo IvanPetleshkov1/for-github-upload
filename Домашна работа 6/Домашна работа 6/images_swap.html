@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            height: 400px;
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="/images/arnold-francisca-f77Bh3inUpE-unsplash.jpg" alt="" id="img1">
+    <img src="/images/pankaj-patel-SXihyA4oEJs-unsplash.jpg" alt="" id="img2"> <br>
+    <input type="button" value="Swap images" onclick="swap()" />
+    <script>
+        function swap() {
+            var image1 = document.getElementById("img1");
+            var image2 = document.getElementById("img2");
+            var image = image1.src;
+            image1.src = image2.src;
+            image2.src = image;
+        }
+
+    </script>
+</body>
+
+</html>

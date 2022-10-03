@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Ex1 Task 2</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <style>
+            .main {
+                font-size: 14px;
+                color: blue;
+            }
+
+            @media (max-width: 320px) {
+                .main {
+                    font-size: 32px;
+                    color: yellow;
+                }
+            }
+
+            @media (max-width: 480px) and (min-width: 321px) {
+                .main {
+                    font-size: 24px;
+                    color: green;
+                }
+            }
+
+            @media (max-width: 768px) and (min-width: 481px) {
+                .main {
+                    font-size: 20px;
+                    color: orange;
+                }
+            }
+
+            @media (max-width: 1024px) and (min-width: 769px) {
+                .main {
+                    font-size: 16px;
+                    color: red;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            Lorem ipsum dolor sit amet.
+        </div>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            position: relative;
+        }
+
+        img {
+            position: absolute;
+            left: 200px;
+            top: 150px;
+            height: 400px;
+            width: 500px;
+        }
+
+        .up,
+        .down {
+            margin-left: 5.8rem;
+            margin-top: 1rem;
+        }
+
+        .left,
+        .right {
+            margin-left: 1.1rem;
+
+        }
+
+        button {
+            width: 10rem;
+            background: none;
+            border: 1px solid silver;
+            border-radius: 20px;
+        }
+
+        button:hover {
+            background-color: rgb(100, 75, 140);
+        }
+    </style>
+</head>
+
+<body>
+
+    <img id='image' src="/images/pankaj-patel-SXihyA4oEJs-unsplash.jpg">
+
+    <button id="left" onclick="moveleft()">left</button>
+    <button class="right" onclick="moveright()">right</button> <br>
+    <button class="up" onclick="moveup()">up</button> <br>
+    <button class="down" onclick="movedown()">down</button>
+
+
+    <script>
+        function moveup() {
+            const img = document.getElementById('image');
+            img.style.top = `${img.offsetTop - 20}px`;
+        }
+
+        function movedown() {
+            const img = document.getElementById('image');
+            img.style.top = `${img.offsetTop + 20}px`;
+        }
+
+        function moveleft() {
+            const img = document.getElementById('image');
+            img.style.left = `${img.offsetLeft - 20}px`;
+        }
+
+        function moveright() {
+            const img = document.getElementById('image');
+            img.style.left = `${img.offsetLeft + 20}px`;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="number" min="1" max="10" />
+    <input type="button" value="Check" onclick="isEven()" />
+
+    <script>
+        function isEven() {
+            let num = document.getElementById('number').value;
+            if (num % 2 == 0)
+                return alert("Числото е четно");
+            else
+                return alert("Числото е нечетно");
+        }
+    </script>
+</body>
+
+</html>
